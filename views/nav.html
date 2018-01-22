@@ -1,0 +1,34 @@
+ <nav class="navbar navbar-default">
+
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/" style="text-align:left;font-family:'Comic Sans MS'; font-size:larger"><b>CYBERSHOP</b></a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#!/home"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#!/contact"><i class="fa fa-envelope-o"></i> Contact Us</a></li>
+                    <li><a href="#!/cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                    <li><a href="#!/admin">Admin</a></li>
+
+                </ul>
+    </div>
+</nav>
+<br />
+    <div class="sidenav navbar-default">
+        <br />
+        <p><b class="forcategories" style="text-align:center">Categories</b></p>
+        <div style="color:black">
+
+            <ul ng-repeat="category in categories ">
+                <li><a href="product/{{category.id}}">{{category.name}} - {{category.countP}}</a></li>
+            <!-- <a href="#!/Mobiles">Mobiles</a>
+            <br />
+            <a href="#!/Books">Books</a><br />
+            <a href="#!/Accesories">Accessories</a><br />
+            <a href="#!/Clothing">Clothing</a> -->
+            </ul>
+        </div>
+    </div>
+
+

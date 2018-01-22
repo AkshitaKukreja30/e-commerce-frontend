@@ -1,0 +1,78 @@
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+	    $urlRouterProvider.otherwise('/');
+	    $stateProvider
+	        .state('app', {
+	            url: '/',
+	            views: {
+	                'header': {
+	                    templateUrl: './views/nav.html',
+	                    controller: 'navCtrl'
+	                },
+	                'content': {
+	                    templateUrl: './views/home.html',
+	                    controller: 'homeCtrl'
+	                }
+	            }
+	        })
+	    $stateProvider
+	        .state('app.cart', {
+	            url: 'cart',
+	            views: {
+	                'content@': {
+	                    templateUrl: './views/dashboard.html',
+	                    controller: 'dashboardCtrl'
+	                }
+	            }
+	        })
+
+	    $stateProvider
+	        .state('app.contact', {
+	            url: 'contact',
+	            views: {
+	                'content@': {
+	                    templateUrl: './views/contact.html',
+	                    controller: 'contactsCtrl'
+	                }
+	            }
+	        })
+
+
+            $stateProvider
+	        .state('app.admin', {
+	            url: 'admin',
+	            views: {
+	                'content@': {
+	                    templateUrl: './views/admin.html'
+	                    // controller: 'adminCtrl'
+	                }
+	            }
+	        })
+
+	        $stateProvider
+	        .state('app.products', {
+	            url: 'product/:type',
+	            views: {
+	                'content@': {
+	                    templateUrl: './views/product.html',
+	                    controller: 'productsCtrl'
+	                }
+	            }
+	        })
+
+
+	        //  $stateProvider
+	        // .state('app.drama', {
+	        //     url: 'Drama',
+	        //     views: {
+	        //         'content@': {
+	        //             templateUrl: './views/drama.html',
+	        //             controller: 'productsCtrl'
+	        //         }
+	        //     }
+	        // })
+
+
+	       $locationProvider.html5Mode(true)
+
+})
+
