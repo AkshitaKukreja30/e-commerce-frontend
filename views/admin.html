@@ -1,0 +1,15 @@
+ <div class=fortables col-lg-7">
+ <form name="registerationform" >
+        <div class="form-group-md">
+            <label>Email-id:</label>
+            <input type="email" ng-model="user.emailforlogin" name="emailforlogin" class="form-control" placeholder="Enter E-mail" required /><br />
+            <br /><br />
+            <label>PASSWORD:</label>
+            <input type="password" ng-model="user.passwordforlogin" name="passwordforlogin" class="form-control" placeholder="Enter Password" required />
+            <br /><br />
+            <center><button class="btn-lg btn-primary" height="30" ng-click="GetLoginDetail(user)">LOGIN</button></center>
+        </div>
+    </form>
+    <p>{{user}}</p>
+    <p>{{credentialserror}}</p>
+</div>

@@ -42,7 +42,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	            url: 'admin',
 	            views: {
 	                'content@': {
-	                    templateUrl: './views/admin.html'
+	                    templateUrl: './views/admin.html',
+	                    controller:'adminCtrl'
 	                    // controller: 'adminCtrl'
 	                }
 	            }
@@ -55,6 +56,19 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	                'content@': {
 	                    templateUrl: './views/product.html',
 	                    controller: 'productsCtrl'
+	                }
+	            }
+	        })
+
+            
+             $stateProvider
+	        .state('app.adddetails', {
+	            url: 'adddetails',
+	            views: {
+	                'content@': {
+	                    templateUrl: './views/adddetails.html',
+	                    controller:'adddetailsCtrl'
+	                    // controller: 'adminCtrl'
 	                }
 	            }
 	        })
@@ -72,7 +86,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	        // })
 
 
-	       $locationProvider.html5Mode(true)
+	       //$locationProvider.html5Mode(true)
 
 })
 
