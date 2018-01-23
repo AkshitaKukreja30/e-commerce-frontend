@@ -12,7 +12,7 @@ $scope.GetLoginDetail = function (foruserlogin) {
            // console.log($scope)
             alert("Credentials match!");
             
-            $location.url('adddetails');
+            $location.path('/adddetails');
             //$cookies.putObject('user', alldetailsforlogin);
            
         }
@@ -28,32 +28,9 @@ $scope.GetLoginDetail = function (foruserlogin) {
 });
 
 
+// this.checkLogin = function (foruserlogin) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-http://localhost:53724/api/registerations/Getregisteration2?"email=akshita@gmail.com&password=12345
-this.checkLogin = function (foruserlogin) {
-
-        return $http.get("/api/RegistrationDetails/GetRegistrationDetail2?username=" + foruserlogin.UserNameForLogin
-            + "&password=" + foruserlogin.PasswordForLogin);
-    };
+//         return $http.get("/api/RegistrationDetails/GetRegistrationDetail2?username=" + foruserlogin.UserNameForLogin
+//             + "&password=" + foruserlogin.PasswordForLogin);
+//     };
 

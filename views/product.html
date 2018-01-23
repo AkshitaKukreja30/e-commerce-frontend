@@ -1,1 +1,31 @@
-<p>Product</p>
+<!-- <p>Product</p>
+<div class="col-md-offset-3 col-md-5">
+	<p ng-repeat="product in products track by $index">{{product.name}}</p>
+</div>
+ -->
+
+<div class="fortables col-lg-7">
+    <table class="table" border="4">
+        <thead>
+            <tr>
+                
+                <th>Name</th>
+                <th>Description</th>
+                <th>Cost</th>
+                <th>Quantity</th>
+                <th></th>
+            </tr>
+        </thead>
+
+
+        <tr ng-repeat="product in products track by $index" border="2">
+           
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.unitprice}}</td>
+            <td>{{product.quantity}}</td>
+            <td><button class="btn-primary" ng-click="addtocart($index)">ADD</button></td>
+
+        </tr>
+    </table>
+   </div>

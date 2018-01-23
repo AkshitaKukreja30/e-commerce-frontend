@@ -32,20 +32,10 @@ this.postproduct = function (productdetails) {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+this.fetchproducts= function(categoryidpassed)
+{
+  return  $http.get("http://localhost:53724/api/products/GetOurProduct?cid="+categoryidpassed);
+}
 
 
 

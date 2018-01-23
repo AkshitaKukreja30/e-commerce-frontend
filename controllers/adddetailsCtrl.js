@@ -26,6 +26,17 @@
 	        }         
 
 
+// $scope.init = function(){
+// 	$http.get("http://localhost:53724/api/categories/Getcategories")
+//    .then(function (response) {
+//         console.log(response)
+//          $scope.categories = response.data;
+//     }, function(err){
+//     	console.log(err)
+//     });
+// };
+
+
 
 $scope.addproduct = function () {
 

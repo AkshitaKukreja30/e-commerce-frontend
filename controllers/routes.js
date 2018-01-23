@@ -79,14 +79,14 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	        //     url: 'Drama',
 	        //     views: {
 	        //         'content@': {
-	        //             templateUrl: './views/drama.html',
+	        //             templateUrl: './views/product.html',
 	        //             controller: 'productsCtrl'
 	        //         }
 	        //     }
 	        // })
 
 
-	       //$locationProvider.html5Mode(true)
+	       $locationProvider.html5Mode(true)
 
 })
 
