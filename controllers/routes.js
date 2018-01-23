@@ -19,8 +19,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	            url: 'cart',
 	            views: {
 	                'content@': {
-	                    templateUrl: './views/dashboard.html',
-	                    controller: 'dashboardCtrl'
+	                    templateUrl: './views/cart.html',
+	                    controller: 'cartCtrl'
 	                }
 	            }
 	        })
@@ -73,6 +73,9 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	            }
 	        })
 
+
+	        
+              
 
 	        //  $stateProvider
 	        // .state('app.drama', {

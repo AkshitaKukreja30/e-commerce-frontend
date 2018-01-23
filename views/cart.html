@@ -1,0 +1,4 @@
+<div class="fortables col-lg-7">
+    <p ng-repeat="product in cartList track by $index">{{product['chosenProduct']['name']}}-{{product['qtyofeach']}}</p>
+    <button ng-click="buyItems()" class="btn btn-primary">Buy</button>
+</div>

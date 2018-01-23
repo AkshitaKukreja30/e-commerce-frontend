@@ -43,8 +43,18 @@ app.controller('productsCtrl', function($scope, myService, $stateParams) {
             cartList.push(cartObject);
         }
 
-        console.log(cartList);
-        localStorage.setItem("cart",JSON.stringify(cartList))
+        localStorage.setItem("cart",JSON.stringify(cartList));
+                	
+
+
     }
+
+    console.log("hey there");
+    console.log(JSON.parse(localStorage.getItem('cart')));
+    for(var i=0;i<cartList.length;i++)
+    {
+    console.log(cartList[0].chosenProduct.unitprice);
+     }
+
 
 });
