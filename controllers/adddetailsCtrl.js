@@ -29,7 +29,14 @@
 
 $scope.addproduct = function () {
 
-	       var addedproduct=$scope.addedproduct;
+	       var addedproduct={
+	       		'name': $scope.addedproduct.name,
+	       		'Description': $scope.addedproduct.description ,
+	       		'unit_price':$scope.addedproduct.unitprice,
+	       		'category_id':$scope.addedproduct.cid,
+	       		'quantity':$scope.addedproduct.qty,
+
+	       };
 	       console.log(addedproduct);
 	       myService.postproduct(addedproduct).then(function () {
 
