@@ -1,0 +1,23 @@
+<div class="fortables col-lg-7">
+    <p><b>Your order has been placed successfully</b></p>
+    <table class="table" border="4">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Cost</th>
+                <th>Total</th>
+                <!-- <th>Quantity</th>
+ -->
+            </tr>
+        </thead>
+        <tr ng-repeat="product in yourorder track by $index" border="2">
+            <td>{{product.chosenProduct.name}}</td>
+            <td>{{product.qtyofeach}}</td>
+            <td>{{product.chosenProduct.unitprice}}</td>
+            <td>{{ (product.chosenProduct.unitprice) * (product.qtyofeach) }}</td>
+        </tr>
+    </table>
+    
+    
+</div>

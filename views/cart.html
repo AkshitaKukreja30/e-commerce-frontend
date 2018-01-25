@@ -1,4 +1,42 @@
 <div class="fortables col-lg-7">
-    <p ng-repeat="product in cartList track by $index">{{product['chosenProduct']['name']}}-{{product['qtyofeach']}}</p>
-    <button ng-click="buyItems()" class="btn btn-primary">Buy</button>
+    <!-- <div ng-repeat="product in cartList track by $index"> -->
+    <table class="table" border="4">
+        <thead>
+            <tr>
+                
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Cost</th>
+                <th>Total</th>
+                <!-- <th>Quantity</th>
+ -->                
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+
+
+<tr ng-repeat="product in cartList track by $index" border="2">
+           
+            <td>{{product.chosenProduct.name}}</td>
+            <td>{{product.qtyofeach}}</td>
+            <td>{{product.chosenProduct.unitprice}}</td>
+            <td>{{this.product.chosenProduct.unitprice*this.product.qtyofeach}}</td>
+            <td><button class="btn-btn-primary" ng-click="remove($index)">REMOVE</button>
+            <td><button class="btn-btn-primary" ng-click="decrease($index)">
+            	<i class="fa fa-angle-double-down" aria-hidden="true"></i>
+            </button>
+
+           
+
+        </tr>
+    </table>
+            
+            <div ng-repeat="singlemessage in message">
+           	<p>{{singlemessage}}</p>
+           </div>
+
+<!-- 
+    {{product['chosenProduct']['name']}}-{{product['qtyofeach']}}</div>
+ -->    <button ng-disabled="isoutofstock" ng-click="buyItems()" class="btn btn-primary">CONFIRM ORDER</button>
 </div>

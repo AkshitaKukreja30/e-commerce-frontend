@@ -25,6 +25,57 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	            }
 	        })
 
+
+        $stateProvider
+	        .state('app.bill', {
+	            url: 'bill',
+	            views: {
+	                'content@': {
+	                    templateUrl: './views/bill.html',
+	                    controller: 'cartCtrl'
+	                }
+	            }
+	        })
+
+             $stateProvider
+	        .state('app.detailsofcustomer', {
+	            url: 'detailsofcustomer',
+	            views: {
+	                'content@': {
+	                    templateUrl: './views/detailsofcustomer.html',
+	                    controller: 'cartCtrl'
+	                    
+	                }
+	            }
+	        })
+
+
+              $stateProvider
+	        .state('app.finalpage', {
+	            url: 'finalpage',
+	            views: {
+	                'content@': {
+	                    templateUrl: './views/finalpage.html',
+	                    controller: 'cartCtrl'
+	                    
+	                }
+	            }
+	        })
+
+
+             $stateProvider
+	        .state('app.test', {
+	            url: 'test',
+	            views: {
+	                'content@': {
+	                    templateUrl: './views/test.html',
+	                    controller: 'productsCtrl'
+	                    
+	                }
+	            }
+	        })
+
+
 	    $stateProvider
 	        .state('app.contact', {
 	            url: 'contact',

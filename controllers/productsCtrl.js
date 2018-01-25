@@ -19,10 +19,11 @@ app.controller('productsCtrl', function($scope, myService, $stateParams) {
     var qtyofeach = 0;
     $scope.addtocart = function(index) {
         $scope.chosen = $scope.products[index];
-        console.log($scope.chosen);
-        console.log(qtyofeach);
+        console.log($scope.chosen.quantity);
+       // console.log(qtyofeach);
 
         var alreadyincart = false;
+
 
         for (var i = 0; i < cartList.length; i++) {
             if (cartList[i].chosenProduct.id == $scope.chosen.id) {
@@ -45,7 +46,7 @@ app.controller('productsCtrl', function($scope, myService, $stateParams) {
 
         localStorage.setItem("cart",JSON.stringify(cartList));
                 	
-
+//A.splice(0,A.length)
 
     }
 
@@ -54,7 +55,7 @@ app.controller('productsCtrl', function($scope, myService, $stateParams) {
     for(var i=0;i<cartList.length;i++)
     {
     console.log(cartList[0].chosenProduct.unitprice);
-     }
+    }
 
 
 });

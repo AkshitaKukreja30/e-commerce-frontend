@@ -9,8 +9,8 @@
                     <li><a href="/home"><i class="fa fa-home"></i> Home</a></li>
                     <li><a href="/contact"><i class="fa fa-envelope-o"></i> Contact Us</a></li>
                     <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                    <li><a href="/admin">ADMIN</a></li>
-                    <!-- <li><a href="#!/adddetails">AddDetails</a></li> -->
+                    <!-- <li><a href="/admin">ADMIN</a></li>
+ -->                    <!-- <li><a href="#!/adddetails">AddDetails</a></li> -->
 
 
                 </ul>
@@ -19,9 +19,13 @@
 <br />
     <div class="sidenav navbar-default">
         <br />
-        <p><b class="forcategories" style="text-align:center">Categories</b></p>
+        <div class="col-md-12">
+            <div class="col-md-2"></div>
+            <div class="col-md-6"><b class="forcategories" style="text-align:center">Categories</b></div>
+            <div class="col-md-4"></div>
+        </div>
         <div style="color:black">
-
+            <br/><br/>
             <ul ng-repeat="category in categories " style="list-style: none">
                 <li><a href="product/{{category.id}}">{{category.name}}<!--  - {{category.countP}} --></a></li>
             <!-- <a href="#!/Mobiles">Mobiles</a>
