@@ -87,7 +87,7 @@ $scope.leftinstock=0;
     }
     $scope.yourorder=JSON.parse(localStorage.getItem('order'));
      $scope.yourorder.forEach(function(item) {
-        $scope.sum = $scope.sum + item['chosenProduct']['unitprice'] * item['qtyofeach']
+     $scope.sum = $scope.sum + item['chosenProduct']['unitprice'] * item['qtyofeach']
     })
 
 
