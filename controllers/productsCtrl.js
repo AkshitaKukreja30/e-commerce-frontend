@@ -1,9 +1,11 @@
 app.controller('productsCtrl', function($scope, myService, $stateParams) {
 	if(localStorage.getItem('cart')){
 		var cartList = JSON.parse(localStorage.getItem('cart'))
+		$scope.forcartitems=JSON.parse(localStorage.getItem('cart'))
 	}else{
 		var cartList = [];
-	}
+		$scope.forcartitems=[];
+			}
     $scope.getproductbycategory = function(categoryidpassed) {
         // var alldetailsforlogin = $scope.;        
         var promiseGetSingle = myService.fetchproducts(categoryidpassed).then(function(response) {
@@ -17,40 +19,62 @@ app.controller('productsCtrl', function($scope, myService, $stateParams) {
     $scope.getproductbycategory($stateParams.type ? $stateParams.type : 1);
     
     var qtyofeach = 0;
+    var qtyofeachfordisplay=0;
+    $scope.addedtocartmessage=[];
+    
+
     $scope.addtocart = function(index) {
-        $scope.chosen = $scope.products[index];
+    	
+
+    	$scope.chosen = $scope.products[index];
+
         console.log($scope.chosen.quantity);
-       // console.log(qtyofeach);
+	        for(var i=0;i<cartList.length;i++)
+	          {
+		     $scope.addedtocartmessage[i]=false;
+	          }
 
         var alreadyincart = false;
-
-
         for (var i = 0; i < cartList.length; i++) {
             if (cartList[i].chosenProduct.id == $scope.chosen.id) {
                 cartList[i].qtyofeach++;
+                $scope.forcartitems[i].qtyofeachfordisplay++;        
                 console.log(cartList[i].qtyofeach);
+                console.log("checking for quantity");
+                console.log($scope.forcartitems[i].qtyofeachfordisplay);
                 alreadyincart = true;
-                break;
-
-            }
+                $scope.addedtocartmessage[index]=true;
+                console.log($scope.addedtocartmessage[i]);
+                               break;
+           }
         }
-
         if (alreadyincart == false) {
             var cartObject = {
-
                 'chosenProduct': $scope.chosen,
                 'qtyofeach': 1
             }
-            cartList.push(cartObject);
-        }
 
+            var cartObject2 = {
+                'chosenProduct': $scope.chosen,
+                'qtyofeachfordisplay': 1
+            }
+
+
+
+            cartList.push(cartObject);
+            $scope.forcartitems.push(cartObject2);
+            $scope.addedtocartmessage[index]=true;
+            console.log($scope.addedtocartmessage);
+
+        }
         localStorage.setItem("cart",JSON.stringify(cartList));
-                	
-//A.splice(0,A.length)
+        //localStorage.setItem("cart",JSON.stringify($scope.forcartitems));
+        console.log("final");
+        console.log($scope.addedtocartmessage);
+
 
     }
-
-    console.log("hey there");
+     
     console.log(JSON.parse(localStorage.getItem('cart')));
     for(var i=0;i<cartList.length;i++)
     {
@@ -59,3 +83,5 @@ app.controller('productsCtrl', function($scope, myService, $stateParams) {
 
 
 });
+
+

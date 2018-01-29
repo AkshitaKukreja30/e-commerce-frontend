@@ -7,6 +7,7 @@ app.controller('cartCtrl', function($scope, $http, $location) {
         $scope.sum = $scope.sum + item['chosenProduct']['unitprice'] * item['qtyofeach']
     })
 
+
     for (var i = 0; i < $scope.cartList.length; i++) {
         arrayforpid[i] = $scope.cartList[i].chosenProduct.id;
 
@@ -18,7 +19,7 @@ app.controller('cartCtrl', function($scope, $http, $location) {
     //    id: '',
     //    quantity: ''
     //  }];
-
+$scope.leftinstock=0;
 
     $scope.buyItems = function() {
 
@@ -34,10 +35,13 @@ app.controller('cartCtrl', function($scope, $http, $location) {
                         //console.log("Products match - id is ", res.data[j]["id"]);
                         console.log("Cart qty is", $scope.cartList[i]["qtyofeach"]);
                         console.log("Available (database) qty is", $scope.arrayreturned[j]["quantity"]);
+                        $scope.leftinstock=$scope.arrayreturned[j]["quantity"];
 
                         if ($scope.cartList[i]["qtyofeach"] > $scope.arrayreturned[j]["quantity"]) {
 
-                            $scope.message.push($scope.cartList[i]["chosenProduct"]["name"] + " is out of stock");
+                            $scope.message.push(
+                            	"Only "+ $scope.leftinstock+" units of " + $scope.cartList[i]["chosenProduct"]["name"] + " are available."
+                            	);
                             console.log($scope.message);
                             console.log($scope.isoutofstock);
 
@@ -53,6 +57,7 @@ app.controller('cartCtrl', function($scope, $http, $location) {
 
                 } else {
                     $scope.isoutofstock = true;
+                    
                 }
             }
             if($scope.isoutofstock == false)
@@ -81,6 +86,10 @@ app.controller('cartCtrl', function($scope, $http, $location) {
         
     }
     $scope.yourorder=JSON.parse(localStorage.getItem('order'));
+     $scope.yourorder.forEach(function(item) {
+        $scope.sum = $scope.sum + item['chosenProduct']['unitprice'] * item['qtyofeach']
+    })
+
 
     // for(var i=0; i<$scope.cartList.length;i++)
     // {
@@ -104,7 +113,7 @@ app.controller('cartCtrl', function($scope, $http, $location) {
         $scope.chosen = $scope.cartList[index];
         if ($scope.chosen.qtyofeach > 1) {
             $scope.chosen.qtyofeach--;
-            localStorage.setItem("cart", JSON.stringify($scope.cartList));
+           localStorage.setItem("cart", JSON.stringify($scope.cartList));
 
         } else {
             $scope.remove(index);
@@ -116,5 +125,6 @@ app.controller('cartCtrl', function($scope, $http, $location) {
         debugger
         $scope.sum = ($scope.sum + (parseInt(product.chosenProduct.unitprice)) * (parseInt(product.qtyofeach)))
     }
+
 
 });

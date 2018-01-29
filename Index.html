@@ -1,125 +1,119 @@
-<html ng-app="app">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CYBERSHOP</title>
-    <!--<script src="Scripts/jquery-3.2.1.min.js"></script>-->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <!--<script src="Scripts/angular.min.js"></script>-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-resource.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.js"></script> -->
-    
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
-    <base href="/" />
-    <style>
-     <style > body {
-            font-family: "Lato", sans-serif;
-        }
+	<html ng-app="app">
 
-        .sidenav {
-            height: 100%;
-            width: 240px;
-            position: fixed;
-            z-index: 1;
-            top: 30px;
-            left: 0;
-            
-            padding-top: 40px;
-            color: black;
-            // overflow-x: hidden;
-            padding-top: 20px;
-        }
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>CYBERSHOP</title>
+		<!--<script src="Scripts/jquery-3.2.1.min.js"></script>-->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<!--<script src="Scripts/angular.min.js"></script>-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-resource.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.js"></script> -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+		<base href="/" />
+		<style>
+		<style>body {
+			font-family: "Lato", sans-serif;
+		}
 
-            .sidenav a {
-                padding: 6px 6px 6px 32px;
-                text-decoration: none;
-                font-size: 25px;
-                color: #818181;
-                /*display: block;*/
-            }
+		.sidenav {
+			height: 100%;
+			width: 240px;
+			position: fixed;
+			z-index: 1;
+			top: 30px;
+			left: 0;
 
-                .sidenav a:hover {
-                    color: darkblue;
-                }
+			padding-top: 40px;
+			color: black; // overflow-x: hidden;
+			padding-top: 20px;
+		}
 
-        .main {
-            margin-left: 200px; /* Same as the width of the sidenav */
-        }
+		.sidenav a {
+			padding: 6px 6px 6px 32px;
+			text-decoration: none;
+			font-size: 25px;
+			color: #818181;
+			/*display: block;*/
+		}
 
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding-top: 15px;
-            }
+		.sidenav a:hover {
+			color: darkblue;
+		}
 
-                .sidenav a {
-                    font-size: 18px;
-                }
-        }
+		.main {
+			margin-left: 200px;
+			/* Same as the width of the sidenav */
+		}
 
-        .fortopnavbar{
-            position: fixed;
-        }
+		@media screen and (max-height: 450px) {
+			.sidenav {
+				padding-top: 15px;
+			}
 
-        h1 {
-            background-color: antiquewhite;
-            color: black;
-        }
+			.sidenav a {
+				font-size: 18px;
+			}
+		}
 
-        .forcategories{
-            text-align:center;
-            font-size:larger;
-        }
+		.fortopnavbar {
+			position: fixed;
+		}
 
-        .fortables {
-            text-align:center;
-            font-size:medium;
-            margin-left:240px;
-           
-            
-        }
-        .borderforcard{
-            border-radius:10px;
-            background-color:antiquewhite;
-            margin-left:240px;
-            text-align:center;
-            padding-top:50px;
-            width:340px;
-            height:250px;
-            font-size:medium;
-            
-        }
+		h1 {
+			background-color: antiquewhite;
+			color: black;
+		}
 
-        .borderforimage{
-            text-align:center;
-            margin-left:180px;
+		.forcategories {
+			text-align: center;
+			font-size: larger;
+		}
 
-        }
+		.fortables {
+			text-align: center;
+			font-size: medium;
+			margin-left: 240px;
+		}
 
+		.borderforcard {
+			border-radius: 10px;
+			background-color: antiquewhite;
+			margin-left: 240px;
+			text-align: center;
+			padding-top: 50px;
+			width: 340px;
+			height: 250px;
+			font-size: medium;
+		}
 
+		.borderforimage {
+			text-align: center;
+			margin-left: 180px;
+		}
+		</style>
+	</head>
 
+	<body ng-controller="mainCtrl">
+		<div ui-view="header"></div>
+		<div ui-view="content"></div>
+		<p>{{message}}</p>
+		<script type="text/javascript" src="controllers/module.js"></script>
+		<script type="text/javascript" src="controllers/routes.js"></script>
+		<script type="text/javascript" src="controllers/mainCtrl.js"></script>
+		<script type="text/javascript" src="controllers/navCtrl.js"></script>
+		<script type="text/javascript" src="controllers/homeCtrl.js"></script>
+		<script type="text/javascript" src="controllers/contactsCtrl.js"></script>
+		<script type="text/javascript" src="controllers/productsCtrl.js"></script>
+		<script type="text/javascript" src="controllers/dashboardCtrl.js"></script>
+		<script type="text/javascript" src="services/myService.js"></script>
+		<script type="text/javascript" src="controllers/adminCtrl.js"></script>
+		<script type="text/javascript" src="controllers/adddetailsCtrl.js"></script>
+		<script type="text/javascript" src="controllers/cartCtrl.js"></script>
+		<script type="text/javascript" src="controllers/adddetailsCtrl.js"></script>
+	</body>
 
-    </style>
- </head>
- <body ng-controller="mainCtrl">
-    <div ui-view="header"></div>
-    <div ui-view="content"></div>
-    <p>{{message}}</p>
-    <script type="text/javascript" src="controllers/module.js"></script>
-    <script type="text/javascript" src="controllers/routes.js"></script>
-    <script type="text/javascript" src="controllers/mainCtrl.js"></script>
-    <script type="text/javascript" src="controllers/navCtrl.js"></script>
-       <script type="text/javascript" src="controllers/homeCtrl.js"></script>
-    <script type="text/javascript" src="controllers/contactsCtrl.js"></script>
-    <script type="text/javascript" src="controllers/productsCtrl.js"></script>
-    <script type="text/javascript" src="controllers/dashboardCtrl.js"></script>
-     <script type="text/javascript" src="services/myService.js"></script>
-    <script type="text/javascript" src="controllers/adminCtrl.js"></script>
-    <script type="text/javascript" src="controllers/adddetailsCtrl.js"></script>
-    <script type="text/javascript" src="controllers/cartCtrl.js"></script>
-    <script type="text/javascript" src="controllers/adddetailsCtrl.js"></script>
-
- </body>
- </html>
+	</html>
