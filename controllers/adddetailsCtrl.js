@@ -46,6 +46,7 @@ $scope.addproduct = function () {
 	       		'unit_price':$scope.addedproduct.unitprice,
 	       		'category_id':$scope.addedproduct.cid,
 	       		'quantity':$scope.addedproduct.qty,
+	       		'imgofproduct':$scope.addedproduct.url
 
 	       };
 	       console.log(addedproduct);

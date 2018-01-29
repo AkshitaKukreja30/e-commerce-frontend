@@ -3,16 +3,20 @@
 <div class="fortables col-lg-9">
     <div ng-repeat="product in products track by $index">
     
-            <div class="w3-card-4 col-lg-3" style="margin-right: 4em; margin-bottom: 2em;height:15em">
+            <div class="w3-card-4 col-lg-3" style="margin-right: 4em; margin-bottom: 2em;height:25em">
             <header class="w3-container w3-light-grey">
                 <h3>{{product.name}}</h3>
             </header>
             <div class="w3-container">
+             <br>
+             <img src="{{product.imgofproduct}}" width="160" height="120" />
              <p>{{product.description}}</p>
              <p>PRICE  : RS {{product.unitprice}}</p>
+             <a href="{{product.imgofproduct}}" style="color: blue">VIEW FULL IMAGE</a>
+             <br>
              <br>
              <p><button class="btn-primary" ng-click="addtocart($index)">ADD</button></p>
-         </div>
+             </div>
          <p ng-show="addedtocartmessage[$index]">ADDED TO CART</p>
          <!-- <br><br><br> -->
          
