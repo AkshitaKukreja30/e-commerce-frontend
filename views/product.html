@@ -2,31 +2,33 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <div class="fortables col-lg-9">
     <div ng-repeat="product in products track by $index">
-    
-            <div class="w3-card-4 col-lg-3" style="margin-right: 4em; margin-bottom: 2em;height:25em">
+
+        <div class="w3-card-4 col-lg-3" style="margin-right: 4em; margin-bottom: 2em;height:25em">
             <header class="w3-container w3-light-grey">
                 <h3>{{product.name}}</h3>
             </header>
             <div class="w3-container">
-             <br>
-             <img src="{{product.imgofproduct}}" width="160" height="120" 
-             onerror="if (this.src != 'https://www.fastrack.in/datasource/products/table-top/fastrack-women-silicon-digital-red-watch-68005pp02(table-top).jpg')
-             this.src = 'http://spinolasbakeshop.com/wp-content/uploads/2015/04/22520129_l.jpg';"/>
-             <p>{{product.description}}</p>
-             <p>PRICE  : RS {{product.unitprice}}</p>
-             <a href="{{product.imgofproduct}}" style="color: blue">VIEW FULL IMAGE</a>
-             <br>
-             <br>
-             <p><button class="btn-primary" ng-click="addtocart($index)">ADD</button></p>
-             </div>
-         <p ng-show="addedtocartmessage[$index]">ADDED TO CART</p>
-         <!-- <br><br><br> -->
-         
-        </div>
-        </div>
-    <!--     <div ng-repeat="item in forcartitems track by $index">
-        <p ng-show="addedtocartmessage[$index]">QTY: {{item.qtyofeachfordisplay}}</p>
-</div> -->
+               <br>
+               <img src="{{product.imgofproduct}}" width="160" height="120" 
+               onerror="if (this.src != 'https://www.fastrack.in/datasource/products/table-top/fastrack-women-silicon-digital-red-watch-68005pp02(table-top).jpg')
+               this.src = 'http://spinolasbakeshop.com/wp-content/uploads/2015/04/22520129_l.jpg';"/>
+               <p>{{product.description}}</p>
+               <p>PRICE  : RS {{product.unitprice}}</p>
+               <a href="{{product.imgofproduct}}" style="color: blue">VIEW FULL IMAGE</a>
+               <br>
+               <br>
+               <p><button class="btn-primary" ng-click="addtocart($index)">ADD</button></p>
+           </div>
+           <p ng-show="addedtocartmessage[$index]">ADDED TO CART<br>QTY: {{cartList[$index].qtyofeach}}</p>
 
-    <br><br><br>
+           <!-- <br><br><br> -->
+
+       </div>
+   </div>
+<!-- <div ng-repeat="item in forcartitems track by $index">
+<p>QTY: {{item.qtyofeachfordisplay}}</p>
+</div>
+ -->
+
+<br><br><br>
 </div>
