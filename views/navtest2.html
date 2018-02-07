@@ -1,0 +1,125 @@
+<style>
+body {margin:0;font-family:Arial}
+
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  /*padding: 14px 16px;*/
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav input[type=text] {
+  float: left;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  border: none;
+  font-size: 17px;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav input[type=text] {
+    float: none;
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    margin: auto;
+    padding: 14px;
+}
+.topnav input[type=text] {
+    border: 1px solid #ccc;  
+}
+.suggestions-list {
+    position: absolute;
+    list-style-type: none;
+    margin: 0 0 0 23px;
+    padding: 0;
+    overflow: auto;
+}
+.suggestions-list li {
+    color: #000000;
+    padding: 10px 10px;
+    height:10px;
+    cursor: pointer;
+    background: #f9f9f9;
+    border-bottom: 1px solid #eeeeee;
+    width:234px;
+}
+.suggestions-list li:hover {
+    background: #eeeeee;
+}
+.suggestions-list li:active,
+.suggestions-list li.active {
+    color: #FFFFFF;
+    background: #0099FF;
+    width:234px;
+}
+.suggestions-list:focus{
+    outline:none;
+}
+.list-wrapper {
+    position:absolute;
+    width:300px;
+    height:150px;
+    top:40%;
+    margin-top:-75px;
+    left:50%;
+    margin-left:-150px;
+}
+}
+</style>
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<body>
+
+
+
+
+    <div class="topnav navbar-fixed-top" style="text-align: left;background-color: #FFCE2B">
+
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/" style="text-align:left;font-family:'Comic Sans MS'; font-size:xx-large; background-color:black;margin-right: 7em;padding-right: 1em;color: white" ><b>CYBERSHOP</b></a>
+    </div>
+
+    <input type="text" name="productname" id="productname" ng-model="productname" ng-keyup="complete(productname)" class="form-control" placeholder="Serach for products" style="width: 350px"/>
+    <a href="/home"><button style="margin-top: 8px;margin-right: 10em"><i class="fas fa-search" style="font-size:17px"></i></button></a>
+    <a href="/home" style="color:black;padding-right: 2em;margin-top: 11px"><i class="fa fa-home"></i> Home</a>
+    <a href="/contact" style="color:black;padding-right: 2em;margin-top:11px"><i class="fa fa-envelope-o"></i> Contact Us</a>
+    <a href="/cart" style="color:black;padding-right: 2em;margin-top:11px"><i class="fa fa-shopping-cart"></i> Cart</a>
+
+</div>
+<div class="fortables col-lg-7" >
+    <br><br><br>
+        <ul class="list-group" ng-model="hidethis" ng-hide="hidethis">  
+        <li class="list-group-item" ng-repeat="product in filterproducts" ng-click="fillTextbox(product)" style="width: 350px; margin-left: 13em">{{product}}</li>  
+    </ul>
+
+</div>
+<div class="list-wrapper">
+
+<ul class="suggestions-list">
+    <li>abc</li>
+    <li>xyz</li>
+    <li>def</li>
+</ul>
+</div>
+</body>
+
+

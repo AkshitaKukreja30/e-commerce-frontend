@@ -11,8 +11,8 @@ app.controller('productsCtrl', function($scope, myService, $stateParams) {
     var qtyfordisplay = 0;
     $scope.addedtocartmessage = [];
     $scope.qtyarray = [];
-
-
+    
+    $scope.productnames=[];
 
 
 
@@ -21,13 +21,19 @@ app.controller('productsCtrl', function($scope, myService, $stateParams) {
     $scope.getproductbycategory = function(categoryidpassed) {
         // var alldetailsforlogin = $scope.;        
         var promiseGetSingle = myService.fetchproducts(categoryidpassed).then(function(response) {
-            console.log(response)
+            //console.log(response)
             $scope.products = response.data
+            for(var p in $scope.products)
+            {
+                $scope.productnames.push($scope.products[p].name);
+            }
+            
             //$scope.cartList = JSON.parse(localStorage.getItem('cart'))
             //localStorage.setItem("cart",JSON.stringify($scope.cartList));
 
             //$scope.cartList=[];
-            $scope.qtyarray = new Array($scope.cartList.length);
+            //$scope.qtyarray = new Array($scope.cartList.length);
+            //$scope.qtyarray.splice($scope.qtyarray.length,1);
             // for(var j=0;j<$scope.qtyarray.length;j++)
             // {
             // $scope.qtyarray.qtyfordisplay[j]=0;
@@ -42,6 +48,7 @@ app.controller('productsCtrl', function($scope, myService, $stateParams) {
     }
     $scope.getproductbycategory($stateParams.type ? $stateParams.type : 1);
 
+console.log($scope.productnames);
 
 
     $scope.addtocart = function(index) {
@@ -60,7 +67,7 @@ app.controller('productsCtrl', function($scope, myService, $stateParams) {
             if ($scope.cartList[i].chosenProduct.id == $scope.chosen.id) {
                 $scope.cartList[i].qtyofeach++;
                 //$scope.qtyarray[index]=$scope.cartList[index].qtyofeach;
-                $scope.qtyarray[i].qtyfordisplay++;
+                //$scope.qtyarray[i].qtyfordisplay++;
                 //$scope.forcartitems[i].qtyofeach++;        
                 console.log($scope.cartList[i].qtyofeach);
                 console.log("checking for quantity");
@@ -77,13 +84,13 @@ app.controller('productsCtrl', function($scope, myService, $stateParams) {
                 'qtyofeach': 1
             }
 
-            var newobjectforqty = {
-                'qtyfordisplay': 1
-            }
+            // var newobjectforqty = {
+            //     'qtyfordisplay': 1
+            // }
             $scope.cartList.push(cartObject);
             //$scope.forcartitems.push(cartObject);
             $scope.addedtocartmessage[index] = true;
-            $scope.qtyarray.push(newobjectforqty);
+            //$scope.qtyarray.push(newobjectforqty);
             console.log($scope.addedtocartmessage);
 
         }
@@ -92,8 +99,9 @@ app.controller('productsCtrl', function($scope, myService, $stateParams) {
         console.log("final");
         console.log($scope.addedtocartmessage);
         console.log("this should work");
-        console.log($scope.qtyarray[index]);
-        debugger
+        
+        //console.log($scope.qtyarray);
+        
 
 
     }
@@ -102,6 +110,56 @@ app.controller('productsCtrl', function($scope, myService, $stateParams) {
     for (var i = 0; i < $scope.cartList.length; i++) {
         console.log($scope.cartList[0].chosenProduct.unitprice);
     }
+
+
+//$scope.hidethis=false;
+  $scope.complete = function(string){  
+           $scope.hidethis = false;  
+           var outputarray = [];  
+            console.log(string.includes('A'));
+            console.log(angular.lowercase(string).includes('a'));
+            angular.forEach($scope.productnames, function(productname){  
+
+               var stringinlowercase=angular.lowercase(string);
+               var productnameinlowercase=angular.lowercase(productname);
+               console.log("in lower case");
+               //console.log(productnameinlowercase);
+               //console.log($scope.productnameinlowercase.includes('a'));
+               console.log(productnameinlowercase.includes(stringinlowercase));
+
+               //console.log(stringinlowercase.includes('A'));
+               //console.log(productnameinlowercase.includes('a'));
+
+
+              
+                
+                 if(productnameinlowercase.includes(stringinlowercase))
+                 outputarray.push(productname); 
+                 if(string.length==0)
+                 $scope.hidethis=true;
+
+                                    
+           });  
+
+           $scope.filterproducts = outputarray;  
+           console.log($scope.filterproducts)
+           //console.log($scope.products);
+      }  
+
+      $scope.fillTextbox = function(string){  
+           $scope.productname = string;  
+           $scope.hidethis = true;  
+
+           
+      }  
+
+     
+     $scope.findthisproduct=function(nameofproducttobedisplayed)
+     {
+
+
+     }
+
 
 
 });

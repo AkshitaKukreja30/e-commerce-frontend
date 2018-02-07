@@ -1,6 +1,44 @@
-<br>
+<!-- <br>
 <br>
 <br>
 <p class="borderforimage">
     <img src="https://i.pinimg.com/736x/b6/e1/94/b6e19446012b40e110eeaca1dce71c0a--carrie-bradshaw-quotes-fashion-quotes.jpg" alt="Image result for quotes on shopping" height=500 width=800/>
-</p>
+</p> -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div class="fortables col-lg-9">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<!-- <div class=fortables col-lg-5"> -->
+<hr>
+<!-- <input type="text" placeholder="Search" ng-model="searchforproducts" > -->
+<!-- <div ng-repeat="product in products|filter:searchforproducts">
+<li>{{product.name}}</li>
+</div> -->
+
+
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />   -->
+ <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>   -->
+           <style>  
+           li{  
+                cursor:pointer;  
+           }  
+           li:hover  
+           {  
+                background-color:#f9f9f9;  
+           }  
+
+           </style>  
+            
+           <br /><br />  
+           <div class="container" style="width:500px;">  
+                              <!--  <div ng-app="myapp" ng-controller="usercontroller">   -->
+                                         <!--  <button><i class="fas fa-search"></i></button> -->
+                                          <div>
+                                          <input type="text" name="productname" id="productname" ng-model="productname" ng-keyup="complete(productname)" class="form-control" >
+                                          <button><i class="fas fa-search"></i></button>
+                                      </div>
+                                      
+
+                     <ul class="list-group" ng-model="hidethis" ng-hide="hidethis">  
+                     <li class="list-group-item" ng-repeat="product in filterproducts" ng-click="fillTextbox(product)">{{product}}</li>  
+                     </ul>  
+                </div>  

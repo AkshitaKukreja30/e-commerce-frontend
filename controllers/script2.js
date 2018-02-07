@@ -1,9 +1,9 @@
-
-app.controller('dashboardCtrl', function ($scope) {
-   
-            $scope.message = "Hello Dashboard";
-            console.log("dashboard controller");
-            $scope.states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+// (function(angular) {
+// 'use strict';
+  angular.module('bootstrap3-typeahead-example', ['bootstrap3-typeahead']).
+    controller('sampleCtrl', function($scope) {
+      
+      $scope.states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
            'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
            'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
            'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
@@ -14,6 +14,8 @@ app.controller('dashboardCtrl', function ($scope) {
           'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
       ]
       
-      $scope.value = '';
-      console.log($scope.value);
-        });
+      $scope.value = ''
+      
+    })
+    
+// })(angular);

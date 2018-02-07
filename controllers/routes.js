@@ -63,18 +63,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	        })
 
 
-             $stateProvider
-	        .state('app.test', {
-	            url: 'test',
-	            views: {
-	                'content@': {
-	                    templateUrl: './views/test.html',
-	                    controller: 'productsCtrl'
-	                    
-	                }
-	            }
-	        })
-
+          
 
 	    $stateProvider
 	        .state('app.contact', {
@@ -125,19 +114,46 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	        })
 
 
-	        
+	         $stateProvider
+	        .state('app.navtest', {
+	            url: 'navtest',
+	            views: {
+	                'content@': {
+	                    templateUrl: './views/navtest.html'
+	                    
+	                }
+	            }
+	        })
               
+               $stateProvider
+	        .state('app.typeaheaddemo', {
+	            url: 'typeaheaddemo',
+	            views: {
+	                'content@': {
+	                    templateUrl: './views/typeaheaddemo.html',
+	                    controller: 'sampleCtrl'
+	                    
+	                }
+	            }
+	        })
 
-	        //  $stateProvider
-	        // .state('app.drama', {
-	        //     url: 'Drama',
-	        //     views: {
-	        //         'content@': {
-	        //             templateUrl: './views/product.html',
-	        //             controller: 'productsCtrl'
-	        //         }
-	        //     }
-	        // })
+                  $stateProvider
+	        .state('app.navtest2', {
+	            url: 'navtest2',
+	            views: {
+	            	'header': {
+	                    templateUrl: './views/navtest2.html',
+	                    controller: 'homeCtrl'
+	                },
+
+	                'content@': {
+	                    templateUrl: './views/navtest2.html',
+	                    controller: 'homeCtrl'
+	                    
+	                }
+	            }
+	        })
+
 
 
 	       $locationProvider.html5Mode(true)

@@ -1,11 +1,51 @@
-<br><br><br>
+<!-- <br><br><br> -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <div class="fortables col-lg-9">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<!-- <div class=fortables col-lg-5"> -->
+<hr>
+<!-- <input type="text" placeholder="Search" ng-model="searchforproducts" > -->
+<!-- <div ng-repeat="product in products|filter:searchforproducts">
+<li>{{product.name}}</li>
+</div> -->
+
+
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />   -->
+ <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>   -->
+           <style>  
+           li{  
+                cursor:pointer;  
+           }  
+           li:hover  
+           {  
+                background-color:#f9f9f9;  
+           }  
+
+           </style>  
+            
+           <br /><br />  
+           <div class="container" style="width:500px;">  
+                              <!--  <div ng-app="myapp" ng-controller="usercontroller">   -->
+                                         <!--  <button><i class="fas fa-search"></i></button> -->
+                                          <div>
+                                          <input type="text" name="productname" id="productname" ng-model="productname" ng-keyup="complete(productname)" class="form-control" >
+                                          <button><i class="fas fa-search"></i></button>
+                                      </div>
+                                      
+
+                     <ul class="list-group" ng-model="hidethis" ng-hide="hidethis">  
+                     <li class="list-group-item" ng-repeat="product in filterproducts" ng-click="fillTextbox(product)">{{product}}</li>  
+                     </ul>  
+                </div>  
+           
+   
+ 
     <div ng-repeat="product in products track by $index">
 
-        <div class="w3-card-4 col-lg-3" style="margin-right: 4em; margin-bottom: 2em;height:25em">
-            <header class="w3-container w3-light-grey">
-                <h3>{{product.name}}</h3>
+        <div class="w3-card-4 col-lg-3" style="margin-right: 4em; margin-bottom: 2em;height:25em;background-color:#FBE9E7;">
+            <header class="w3-container w3-#FFAB91">
+                <h3 style="background-color: #FFAB91; height:2em; padding-top:10px">{{product.name}}</h3>
+
             </header>
             <div class="w3-container">
                <br>
@@ -19,7 +59,7 @@
                <br>
                <p><button class="btn-primary" ng-click="addtocart($index)">ADD</button></p>
            </div>
-           <p ng-show="addedtocartmessage[$index]">ADDED TO CART<br>QTY: {{cartList[$index].qtyofeach}}</p>
+           <p ng-show="addedtocartmessage[$index]">ADDED TO CART<!-- <br>QTY: {{cartList[$index].qtyofeach}} --></p>
 
            <!-- <br><br><br> -->
 
